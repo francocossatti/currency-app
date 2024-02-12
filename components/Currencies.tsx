@@ -2,6 +2,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useInputValue } from '@/context/InputContext';
+import Image from "next/image";
 
 type ExchangeRateData = {
   rates: {
@@ -44,16 +45,19 @@ export default function Currencies({ data }: { data: ExchangeRateData }) {
                 height: "100%",
               }}
             >
-              <img
+              <Image
                 src={flagImageLinks[currency]}
                 alt={`Flag ${currency}`}
-                style={{ maxWidth: "40%", height: "auto" }}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '45%', height: 'auto' }} // optional
               />
               <Box sx={{ textAlign: "center", mt: 2 }}>
-                <Typography sx={{ fontSize: "3svh" }}>
+                <Typography sx={{ fontSize: "3vh" }}>
                   ${((parseFloat(inputValue) || 0) * rate).toFixed(2)}
                 </Typography>
-                <Typography sx={{ fontSize: "2svh" }}>
+                <Typography sx={{ fontSize: "2vh" }}>
                   1UY - {rate.toFixed(2)}{currency}
                 </Typography>
               </Box>

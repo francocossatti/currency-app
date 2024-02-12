@@ -40,13 +40,13 @@ export default function CustomizedInputBase({ data }: { data: ExchangeRateData})
           alignItems: 'center',
         }}
       >
-        <Typography sx={{ fontSize: '5vh'}}>Write an amount</Typography>
+        <Typography sx={{ fontSize: '200%'}}>Write an amount</Typography>
         <Paper
           component="form"
           sx={{
             p: '2px 4px',
             display: 'flex',
-            width: '40vh'
+            width: '40vw',
           }}
         >
           <InputBase sx={{ ml: 1, flex: 1, 'input': { textAlign: 'center' } }} onChange={handleChange}/>
@@ -56,7 +56,7 @@ export default function CustomizedInputBase({ data }: { data: ExchangeRateData})
           </Icon>
         </Paper>
         {/* Utiliza la función para formatear el timestamp */}
-        <Typography sx={{ fontSize: '2vh'}}>Last update: {formatTimestamp(data.timestamp)}</Typography>
+        <Typography sx={{ width: '30vw', fontSize: '80%'}}>Last update: {formatTimestamp(data.timestamp)}</Typography>
       </Box>
     </Container>
   );
